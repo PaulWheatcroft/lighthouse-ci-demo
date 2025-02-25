@@ -1,0 +1,12 @@
+{
+  "name": "lighthouse-ci-demo",
+  "version": "1.0.0",
+  "description": "This is a **demo website** created to test and showcase how to integrate and utilize **Lighthouse CI** for automated performance auditing and monitoring. The site consists of **2-3 simple web pages**, hosted on **GitHub Pages**, and includes a GitHub Actions workflow to run Lighthouse CI automatically on every push to the repository.",
+  "main": "lighthouse.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
