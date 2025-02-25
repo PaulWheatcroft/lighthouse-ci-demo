@@ -1,13 +1,28 @@
-name: CI
-on: [push]
+name: Lighthouse CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
 jobs:
-  lighthouseci:
+  lighthouse:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: 18
-      - run: npm install && npm install -g @lhci/cli@0.14.x
-      - run: npm run build
-      - run: lhci autorun
+          node-version: '18'
+
+      - name: Install Lighthouse CI
+        run: npm install -g @lhci/cli
+
+      - name: List project files (Debugging)
+        run: ls -R  # This will show whether `lighthouse.config.js` exists
+
+      - name: Run Lighthouse CI with Explicit Config
+        run: lhci autorun --config=./lighthouse.config.js
