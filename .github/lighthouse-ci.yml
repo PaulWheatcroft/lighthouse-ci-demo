@@ -4,22 +4,16 @@ on:
   push:
     branches:
       - main
-  schedule:
-    - cron: "0 12 * * 1"  # Runs every Monday at 12 PM UTC
 
 jobs:
-  lighthouse:
+  lighthouse-ci:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm install
 
       - name: Run Lighthouse CI
-        uses: treosh/lighthouse-ci-action@v10
-        with:
-          urls: |
-            https://paulwheatcroft.github.io/lighthouse-ci-demo/
-            https://paulwheatcroft.github.io/lighthouse-ci-demo/modern.html
-            https://paulwheatcroft.github.io/lighthouse-ci-demo/gallery.html
-          uploadArtifacts: true
-          temporaryPublicStorage: true
+        run: npx lighthouse-ci --config=lighthouse.config.js
