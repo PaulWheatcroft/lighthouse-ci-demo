@@ -4,7 +4,7 @@ module.exports = {
         url: ['https://paulwheatcroft.github.io/lighthouse-ci-demo/'],
       },
       upload: {
-        target: 'github',
+        target: 'temporary-public-storage',
       },
     },
   };
