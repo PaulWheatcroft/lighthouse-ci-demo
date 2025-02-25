@@ -75,6 +75,8 @@ main {
 }
 
 .section-text {
+    max-width: 80%;
+    margin: 0 auto;
     background-color: #f7f7f7;
     padding: 2em;
     border: 1px solid #ddd;
