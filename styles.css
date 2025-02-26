@@ -1,7 +1,9 @@
 body {
     font-family: Arial, sans-serif;
+    font-size: 6px;
     margin: 0;
     padding: 0;
+    color: #777; /* Low contrast text */
 }
 
 header {
@@ -9,7 +11,7 @@ header {
 }
 
 nav {
-    background-color: #333;
+    background-color: #ffffff;
     color: #fff;
     height: 100px;
     display: flex;
@@ -32,6 +34,7 @@ nav a {
     color: #fff;
     text-decoration: none;
     transition: color 0.2s ease-in-out;
+    outline: none; /* Remove focus outline */
 }
 
 nav a:hover {
