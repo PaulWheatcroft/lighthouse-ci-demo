@@ -1,6 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     font-size: 6px;
+    color: #fff;
     margin: 0;
     padding: 0;
     color: #777; /* Low contrast text */
@@ -109,7 +110,7 @@ main {
 }
 
 footer {
-    background-color: #333;
+    background-color: #ffffff;
     color: #fff;
     padding: 1em;
     text-align: center;
